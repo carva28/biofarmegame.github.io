@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Bio Farm</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script_jogo.js"></script>
+    <script src="jquery.js"></script>
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+
+<!-- REGISTAR -->
+<div id="registo_form">
+
+    <div id="registo">
+        <h1>Registo</h1>
+    </div>
+
+    <form method="get">
+        <p id="reg_name">Nome</p>
+        <input type="text" name="name" id="name_reg">
+        <br>
+        <p id="reg_user">Username</p>
+        <input type="text" name="name" id="user_reg">
+        <br>
+        <p id="reg_pass">Password</p>
+        <input type="password" name="password" id="pass_reg">
+        <br><br>
+        <input type="button" value="Submit" id="reg_submit">
+    </form>
+
+    <a href="index.html">
+        <div id="btn_return"></div>
+    </a>
+
+</div>
+
+
+<!-- LOGIN -->
+<div id="login_form">
+
+    <div id="login">
+        <h1>Login</h1>
+    </div>
+
+    <form method="get">
+        <p id="name_p">Username</p>
+        <input type="text" name="name" id="name">
+        <br>
+        <p id="pass_p">Password</p>
+        <input type="password" name="password" id="pass">
+        <br><br>
+        <input type="submit" value="Submit" id="submit_btn">
+        <h1 id="header_nome"></h1>
+    </form>
+
+</div>
+
+<img src="imagens/casa.png" id="casa">
+
+<div id="main">
+    <div id="area"></div>
+</div>
+
+
+<!--BARRA-->
+<div id="barra">
+    <div id="notas">
+        <img src="imagens/sapo.png">
+        <p id="notas_txt">5</p>
+    </div>
+
+    <div id="moedas">
+        <img src="imagens/terra.png">
+        <p id="moedas_txt">30</p>
+    </div>
+</div>
+
+
+<!--FUNDO VEDACAO-->
+<div id="fundo_jogo"></div>
+
+<div id="vedacao">
+    <img src="imagens/fence.png" id="vedacao_img">
+</div>
+
+
+<button id="icon_som"></button>
+
+
+<!--MENU-->
+<div id="menu">
+
+    <div id="per_nome">
+        <img src="imagens/mulher.png" id="personagem">
+        <h2 id="nome_jogador"></h2>
+    </div>
+
+
+    <div class="elementos" id="div_regador">
+        <img id="elem5" src="imagens/regador.png">
+        <div class="aparece">
+            <p id="apareceTerra">3</p>
+            <img src="imagens/terra.png">
+        </div>
+    </div>
+
+
+    <div id="elem3" class="elementos">
+        <img src="imagens/estufa2.png">
+        <div class="aparece">
+            <p id="apareceNota">10</p>
+            <img src="imagens/terra.png">
+        </div>
+    </div>
+
+</div>
+
+
+<!--MERCADO-->
+<div id="mercado">
+    <img src="imagens/close.png" id="fechar">
+
+    <h3>Mercado</h3>
+
+    <img src="imagens/mercado_fruta.png" id="mercado_img">
+
+    <div id="arvores">
+        <div id="arv1">
+            <img src="imagens/arvores1.png" class="arv_form">
+            <div class="faixa">
+                <h3 id="a1">5</h3>
+                <img src="imagens/terra.png">
+            </div>
+
+            <div class="oferece">
+                <h4>Sobreiro</h4>
+                <p><span>Oferece:</span></p>
+                <p>1 terra</p>
+                <p>Todos os terrenos</p>
+                <p>Crescimento: 1 min</p>
+            </div>
+
+            <div class="comprar" id="comprar1">
+                <h3>Comprar</h3>
+            </div>
+        </div>
+
+
+        <div id="arv2">
+            <img src="imagens/arvores2.png" class="arv_form">
+            <div class="faixa">
+                <h3 id="a2">15</h3>
+                <img src="imagens/terra.png">
+            </div>
+
+            <div class="oferece">
+                <h4>Cipestre</h4>
+                <p><span>Oferece:</span></p>
+                <p>2 terras</p>
+                <p>Exclusivo terreno 2</p>
+                <p>Crescimento: 2 min</p>
+            </div>
+
+            <div class="comprar" id="comprar2">
+                <h3>Comprar</h3>
+            </div>
+        </div>
+
+
+        <div id="arv3">
+            <img src="imagens/arvores3.png" class="arv_form">
+            <div class="faixa">
+                <h3 id="a3">25</h3>
+                <img src="imagens/terra.png">
+            </div>
+
+            <div class="oferece">
+                <h4>Nogueira</h4>
+                <p><span>Oferece:</span></p>
+                <p>4 terras</p>
+                <p>Exclusivo terreno 3</p>
+                <p>Crescimento: 5 min</p>
+            </div>
+
+            <div class="comprar" id="comprar3">
+                <h3>Comprar</h3>
+            </div>
+        </div>
+    </div>
+
+    <img src="imagens/next.png" id="next">
+
+
+
+    <!--SEGUNDA CLASSE DE ÁRVORES-->
+    <img src="imagens/next.png" id="ant">
+
+    <div id="arvores2">
+        <div id="arv4">
+            <img src="imagens/arvores4.png" class="arv_form">
+            <div class="faixa">
+                <h3 id="a4">30</h3>
+                <img src="imagens/terra.png">
+            </div>
+
+            <div class="oferece">
+                <h4>Choupo Branco</h4>
+                <p><span>Oferece:</span></p>
+                <p>5 terras</p>
+                <p>Exclusivo terreno 4</p>
+                <p>Crescimento: 8 min</p>
+            </div>
+
+            <div class="comprar" id="comprar4">
+                <h3>Comprar</h3>
+            </div>
+        </div>
+
+
+        <div id="arv5">
+            <img src="imagens/arvores5.png" class="arv_form">
+            <div class="faixa">
+                <h3 id="a5">40</h3>
+                <img src="imagens/terra.png">
+            </div>
+
+            <div class="oferece">
+                <h4>Ginjeira</h4>
+                <p><span>Oferece:</span></p>
+                <p>6 terras</p>
+                <p>Exclusivo terreno 5</p>
+                <p>Crescimento: 10 min</p>
+            </div>
+
+            <div class="comprar" id="comprar5">
+                <h3>Comprar</h3>
+            </div>
+        </div>
+
+
+        <div id="arv6">
+            <img src="imagens/arvores6.png" class="arv_form">
+            <div class="faixa">
+                <h3 id="a6">60</h3>
+                <img src="imagens/terra.png">
+            </div>
+
+            <div class="oferece">
+                <h4>Laranjeira</h4>
+                <p><span>Oferece:</span></p>
+                <p>8 terras</p>
+                <p>Exclusivo terreno 6</p>
+                <p>Crescimento: 12 min</p>
+            </div>
+
+            <div class="comprar" id="comprar6">
+                <h3>Comprar</h3>
+            </div>
+        </div>
+    </div>
+
+    <img src="imagens/next.png" id="next2">
+    <!--FIM SEGUNDA CLASSE-->
+
+
+
+    <!--TERCEIRA CLASSE DE ÁRVORES-->
+    <img src="imagens/next.png" id="ant2">
+
+    <div id="arvores3">
+        <div id="arv7">
+            <img src="imagens/arvores7.png" class="arv_form">
+            <div class="faixa">
+                <h3 id="a7">1</h3>
+                <img src="imagens/sapo.png">
+            </div>
+
+            <div class="oferece">
+                <h4>Macieira</h4>
+                <p><span>Oferece:</span></p>
+                <p>10 terras</p>
+                <p>Exclusivo terreno 7</p>
+                <p>Crescimento: 15 min</p>
+            </div>
+
+            <div class="comprar" id="comprar7">
+                <h3>Comprar</h3>
+            </div>
+        </div>
+
+
+        <div id="arv8">
+            <img src="imagens/arvores8.png" class="arv_form">
+            <div class="faixa">
+                <h3 id="a8">2</h3>
+                <img src="imagens/sapo.png">
+            </div>
+
+            <div class="oferece">
+                <h4>Carvalho-Alvarinho</h4>
+                <p><span>Oferece:</span></p>
+                <p>12 terras</p>
+                <p>Exclusivo terreno 8</p>
+                <p>Crescimento: 20 min</p>
+            </div>
+
+            <div class="comprar" id="comprar8">
+                <h3>Comprar</h3>
+            </div>
+        </div>
+
+
+        <div id="arv9">
+            <img src="imagens/arvores9.png" class="arv_form">
+            <div class="faixa">
+                <h3 id="a9">5</h3>
+                <img src="imagens/sapo.png">
+            </div>
+
+            <div class="oferece">
+                <h4>Palmeira</h4>
+                <p><span>Oferece:</span></p>
+                <p>15 terras</p>
+                <p>Exclusivo terreno 9</p>
+                <p>Crescimento: 30 min</p>
+            </div>
+
+            <div class="comprar" id="comprar9">
+                <h3>Comprar</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--BIBLIOTECA-->
+<div id="biblioteca">
+    <img src="imagens/close.png" id="fechar02">
+
+    <h3>Biblioteca</h3>
+
+    <div id="manual">
+        <div id="manual_pagina">
+            <img src="imagens/book1.png" id="book1" class="page_form">
+        </div>
+
+
+        <div id="manual_pagina02">
+            <img src="imagens/book2.png" class="page_form">
+        </div>
+
+        <div id="manual_pagina03">
+            <img src="imagens/book3.png" class="page_form">
+        </div>
+
+        <div id="manual_pagina04">
+            <img src="imagens/book4.png" class="page_form">
+        </div>
+    </div>
+
+    <img src="imagens/next.png" id="next3">
+    <img src="imagens/next.png" id="ant3">
+    <img src="imagens/next.png" id="next4">
+    <img src="imagens/next.png" id="ant4">
+    <img src="imagens/next.png" id="next5">
+    <img src="imagens/next.png" id="ant5">
+</div>
+
+
+<!--BOXES PARA COLISÃO-->
+<div id="box1"></div>
+<div id="box2"></div>
+<div id="box3"></div>
+<div id="box4"></div>
+<div id="box5"></div>
+<div id="box6"></div>
+<div id="box7"></div>
+<div id="box8"></div>
+<div id="box9"></div>
+<div id="box10"></div>
+
+
+<!--PLACAS DE VENDA-->
+<img src="imagens/placa.png" class="placas" id="placa1">
+<img src="imagens/placa.png" class="placas" id="placa2">
+<img src="imagens/placa.png" class="placas" id="placa3">
+<img src="imagens/placa.png" class="placas" id="placa4">
+<img src="imagens/placa.png" class="placas" id="placa5">
+<img src="imagens/placa.png" class="placas" id="placa6">
+<img src="imagens/placa.png" class="placas" id="placa7">
+
+<!--PRIMEIRA ÁRVORE EM TODOS-->
+<img src="imagens/tree1.png" id="tree1" class="trees">
+<img src="imagens/tree2.png" id="tree2" class="trees">
+<img src="imagens/tree3.png" id="tree3" class="trees">
+<img src="imagens/tree4.png" id="tree4" class="trees">
+
+<img src="imagens/tree1.png" id="tree_1" class="trees">
+<img src="imagens/tree2.png" id="tree_2" class="trees">
+<img src="imagens/tree3.png" id="tree_3" class="trees">
+<img src="imagens/tree4.png" id="tree_4" class="trees">
+
+<img src="imagens/tree1.png" id="tree5" class="trees">
+<img src="imagens/tree2.png" id="tree6" class="trees">
+<img src="imagens/tree3.png" id="tree7" class="trees">
+<img src="imagens/tree4.png" id="tree8" class="trees">
+
+<img src="imagens/tree1.png" id="tree9" class="trees">
+<img src="imagens/tree2.png" id="tree10" class="trees">
+<img src="imagens/tree3.png" id="tree11" class="trees">
+<img src="imagens/tree4.png" id="tree12" class="trees">
+
+<img src="imagens/tree1.png" id="tree13" class="trees">
+<img src="imagens/tree2.png" id="tree14" class="trees">
+<img src="imagens/tree3.png" id="tree15" class="trees">
+<img src="imagens/tree4.png" id="tree16" class="trees">
+
+<img src="imagens/tree1.png" id="tree17" class="trees">
+<img src="imagens/tree2.png" id="tree18" class="trees">
+<img src="imagens/tree3.png" id="tree19" class="trees">
+<img src="imagens/tree4.png" id="tree20" class="trees">
+
+<img src="imagens/tree1.png" id="tree21" class="trees">
+<img src="imagens/tree2.png" id="tree22" class="trees">
+<img src="imagens/tree3.png" id="tree23" class="trees">
+<img src="imagens/tree4.png" id="tree24" class="trees">
+
+<img src="imagens/tree1.png" id="tree25" class="trees">
+<img src="imagens/tree2.png" id="tree26" class="trees">
+<img src="imagens/tree3.png" id="tree27" class="trees">
+<img src="imagens/tree4.png" id="tree28" class="trees">
+
+<img src="imagens/tree1.png" id="tree29" class="trees">
+<img src="imagens/tree2.png" id="tree30" class="trees">
+<img src="imagens/tree3.png" id="tree31" class="trees">
+<img src="imagens/tree4.png" id="tree32" class="trees">
+
+
+<!--SEGUNDA ÁRVORE-->
+<img src="imagens/treeA1.png" id="treeA1" class="trees">
+<img src="imagens/treeA2.png" id="treeA2" class="trees">
+<img src="imagens/treeA3.png" id="treeA3" class="trees">
+<img src="imagens/treeA4.png" id="treeA4" class="trees">
+
+
+<!--TERCEIRA ÁRVORE-->
+<img src="imagens/tree1.png" id="treeB1" class="trees">
+<img src="imagens/tree2.png" id="treeB2" class="trees">
+<img src="imagens/tree3.png" id="treeB3" class="trees">
+<img src="imagens/treeB4.png" id="treeB4" class="trees">
+
+
+<!--QUARTA ÁRVORE-->
+<img src="imagens/treeC1.png" id="treeC1" class="trees">
+<img src="imagens/treeC2.png" id="treeC2" class="trees">
+<img src="imagens/treeC3.png" id="treeC3" class="trees">
+<img src="imagens/treeC4.png" id="treeC4" class="trees">
+
+
+<!--QUINTA ÁRVORE-->
+<img src="imagens/tree1.png" id="treeD1" class="trees">
+<img src="imagens/tree2.png" id="treeD2" class="trees">
+<img src="imagens/tree3.png" id="treeD3" class="trees">
+<img src="imagens/treeD4.png" id="treeD4" class="trees">
+
+
+<!--SEXTA ÁRVORE-->
+<img src="imagens/treeA1.png" id="treeE1" class="trees">
+<img src="imagens/treeA2.png" id="treeE2" class="trees">
+<img src="imagens/treeA3.png" id="treeE3" class="trees">
+<img src="imagens/treeE4.png" id="treeE4" class="trees">
+
+
+<!--SÉTIMA ÁRVORE-->
+<img src="imagens/treeA1.png" id="treeF1" class="trees">
+<img src="imagens/treeA2.png" id="treeF2" class="trees">
+<img src="imagens/treeA3.png" id="treeF3" class="trees">
+<img src="imagens/treeF4.png" id="treeF4" class="trees">
+
+
+<!--OITAVA ÁRVORE-->
+<img src="imagens/tree1.png" id="treeG1" class="trees">
+<img src="imagens/tree2.png" id="treeG2" class="trees">
+<img src="imagens/tree3.png" id="treeG3" class="trees">
+<img src="imagens/treeG4.png" id="treeG4" class="trees">
+
+
+<!--NONA ÁRVORE-->
+<img src="imagens/tree1.png" id="treeH1" class="trees">
+<img src="imagens/tree2.png" id="treeH2" class="trees">
+<img src="imagens/tree3.png" id="treeH3" class="trees">
+<img src="imagens/treeH4.png" id="treeH4" class="trees">
+
+
+<div id="money">
+    Não tem dinheiro suficiente
+    <img src="imagens/close_terreno.png" id="fechar_money">
+</div>
+
+<div id="terreno1">
+    <img src="imagens/close_terreno.png" id="fechar_terreno">
+    <p id="comprarTerreno1">Comprar</p>
+    <div id="preco">
+        <p id="terra_dinheiro">10</p>
+        <img src="imagens/terra.png">
+    </div>
+</div>
+
+<div id="terreno2">
+    <img src="imagens/close_terreno.png" id="fechar_terreno2">
+    <p id="comprarTerreno2">Comprar</p>
+    <div id="preco2">
+        <p id="terra_dinheiro2">15</p>
+        <img src="imagens/terra.png">
+    </div>
+</div>
+
+<div id="terreno3">
+    <img src="imagens/close_terreno.png" id="fechar_terreno3">
+    <p id="comprarTerreno3">Comprar</p>
+    <div id="preco3">
+        <p id="terra_dinheiro3">20</p>
+        <img src="imagens/terra.png">
+    </div>
+</div>
+
+<div id="terreno4">
+    <img src="imagens/close_terreno.png" id="fechar_terreno4">
+    <p id="comprarTerreno4">Comprar</p>
+    <div id="preco4">
+        <p id="terra_dinheiro4">25</p>
+        <img src="imagens/terra.png">
+    </div>
+</div>
+
+<div id="terreno5">
+    <img src="imagens/close_terreno.png" id="fechar_terreno5">
+    <p id="comprarTerreno5">Comprar</p>
+    <div id="preco5">
+        <p id="terra_dinheiro5">30</p>
+        <img src="imagens/terra.png">
+    </div>
+</div>
+
+<div id="terreno6">
+    <img src="imagens/close_terreno.png" id="fechar_terreno6">
+    <p id="comprarTerreno6">Comprar</p>
+    <div id="preco6">
+        <p id="terra_dinheiro6">35</p>
+        <img src="imagens/terra.png">
+    </div>
+</div>
+
+<div id="terreno7">
+    <img src="imagens/close_terreno.png" id="fechar_terreno7">
+    <p id="comprarTerreno7">Comprar</p>
+    <div id="preco7">
+        <p id="terra_dinheiro7">40</p>
+        <img src="imagens/terra.png">
+    </div>
+</div>
+
+
+
+
+<div id="estufa"></div>
+
+<div id="rega"></div>
+
+<div id="nevao"></div>
+
+</body>
+</html>

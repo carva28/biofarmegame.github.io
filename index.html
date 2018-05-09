@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Bio Farm</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<img src="imagens/base.png" id="base">
+
+<img src="imagens/esconde.png" id="esconde">
+
+
+<img src="imagens/trator.png" id="trator">
+<img src="imagens/trator_sombra.png" id="trator_sombra">
+
+<img src="imagens/nuvem.png" id="nuvem">
+<img src="imagens/nuvem2.png" id="nuvem2">
+
+<a href="jogo.html"><button id="jogar">Jogar</button></a>
+<a href="comojogar.html"><button id="comojogar">Como jogar</button></a>
+
+<div id="creditos"><a href="creditos.html" id="cred">Créditos</a></div>
+    
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAX_GY5ohy-UGky9c99fydO3Qca91PNgjA",
+    authDomain: "biofarm-773c9.firebaseapp.com",
+    databaseURL: "https://biofarm-773c9.firebaseio.com",
+    projectId: "biofarm-773c9",
+    storageBucket: "biofarm-773c9.appspot.com",
+    messagingSenderId: "336966904541"
+  };
+  firebase.initializeApp(config);
+</script>
+</body>
+</html>
